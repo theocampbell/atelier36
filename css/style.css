@@ -1,0 +1,34 @@
+header {
+  text-align: center;
+  margin: 50px;
+}
+
+.left-side, .right-side {
+  height: 100vh;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .left-side, .right-side {
+    height: 50vh;
+  }
+}
+
+.left-side {
+  background: blue;
+  color: white;
+}
+
+.right-side {
+  background: red;
+}
+
+#message {
+  height:200px;
+}
+
+p {
+  margin: 0 100px 0 100px;
+}
