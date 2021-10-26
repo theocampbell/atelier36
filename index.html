@@ -11,65 +11,109 @@
   <!-- add favicon -->
   <!-- add fonts -->
 
+  <!--Email JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+  (function() {
+    emailjs.init("user_rYc2zaAW5f2eSGiHpWb8v");
+    })();
+  </script>
+
+  <script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = Math.random() * 100000 | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm('contact_service', 'contact_form', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+  </script>
+
+
 </head>
 
 <body>
-<header>Atelier36Bastille logo</header>
-
-<div class = "row no-gutters">
-
-  <div class = "col-md-6 no-gutters">
-
-    <div class = "left-side d-flex justify-content-center align-items-center">
-    <p>  2ème MASTERCLASS « EDITION »
-    PARIS, CONCEVOIR SON LIVRE PHOTO DE A À Z
-    Lieu : 36 boulevard de la Bastille - 75012 Paris
-    ESC A 2eme étage
-    Dates : à partir du 5 février
-    Après le succès de la première édition, nous relançons avec Franck
-    Landron, cette formation sur trois week-ends qui aboutit à la
-    réalisation
-    d'un projet d'édition individuel (numérique ou offset « classique »).
-    Trois week-ends de 2 ou 3 jours, plus des rendez-vous individuels
-    s'étaleront sur six mois avec le renfort de professionnels du secteur.
-    Chaque stagiaire aura son « livre » finalisé avant la fin de l'année.
-    (Prix : 950 E pour l'ensemble de la formation).
-    (Nombre de places limitées). Pour plus de renseignements contactez nous >>>
-    <br>
-    <br>
-    DATE :
-5/6 février
-21/22 mai
-23 (à partir de 14h) /24/25 septembre
-</p>
+<header>
+  <div class = "col-2 header-logo">
+    <img src="images/logo.PNG" alt="logo d'Atelier 36 Bastille">
+  </div>
+</header>
+<div class="container-fluid no-gutters">
+  <div class="row">
+    <div class="left-top col-lg-6 d-flex justify-content-center align-items-center no-gutters">
+      <div class="books">
+        <img src="images/books.png" alt="Des livres de photo sur une etager orange">
+      </div>
+    </div>
+    <div class="right-top col-lg-6 d-flex justify-content-center align-items-center no-gutters">
+      <div class="heading">
+      <div class = "heading1"><h2>CONCEVOIR</h2><h2>SON LIVRE PHOTO</h2><h2>DE A À Z</h2></div>
+      <div class="heading2"><h3>2ème MASTERCLASS</h3><h3>« EDITION » PARIS</h3></div>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+     <div class="left-bottom col-lg-6 d-flex justify-content-center align-items-center no-gutters">
+      <div class = "left-bottom-container">
+      <div class="form-box">
+      <form id = "contact-form">
+        <h1 class="contactez-nous">Contactez Nous</h1>
+        <div class="form-group">
+          <input type="text" class="form-control" id="InputName" placeholder="NOM" name = "nom" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL" name = "email" required>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" id="Textarea" rows="1" required placeholder="MESSAGE" name = "message"></textarea>
+        </div>
+          <button type="submit" value="send" class="btn shadow-none">Envoyer</button>
+      </form>
+    </div>
+    <div class="adresse-box">
+      <div class="adresse">
+        <div class="adresse-heading">atelier 36 bastille</div>
+        <div class="adresse-detail">36 boulevard de la Bastille<br>75012 Paris<br>ESC A 2eme étage</div>
+      </div>
+      <div class="logo-box">
+      <div class="logo">
+        <img src="images/LOGO_blanc.png" alt="logo d'Atelier 36 Bastille">
+      </div>
+    </div>
+    </div>  
+    </div>
     </div>
 
+    <div class="right-bottom col-lg-6 d-flex justify-content-center align-items-center no-gutters">
+    <div class="right-bottom-container text-left">
+      <p class = "description">
+      Après le succès de la première édition, nous relançons avec Franck Landron, cette formation sur trois week-ends qui aboutit à la réalisation d'un projet d'édition individuel (numérique ou offset « classique »).
+      </p>
+      <p class = "description">
+      Trois week-ends de 2 ou 3 jours, plus des rendez-vous individuels s'étaleront sur six mois avec le renfort de professionnels du secteur.
+      </p>
+      <p class = "description">
+      Chaque stagiaire aura son « livre » finalisé avant la fin de l'année.
+      </p>
+   
+      <p class = "info"><span>Prix:</span><br>950 E pour l'ensemble de la formation. <br>Nombre de places limitées</p>
+    
+      <p class = "info"><span>Dates:</span><br>à partir du 5 février DATE : 5/6 février 21/22 mai 23 (à partir de 14h) /24/25 septembre</p>
+    
+  </div>
+    
     </div>
-
-  <div class = "col-md-6">
-
-    <div class = "right-side d-flex justify-content-center align-items-center">
-      <form>
-        <label for="fname">Prenom:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Nom:</label><br>
-        <input type="text" id="lname" name="lname"><br>
-        <label for="lname">mail:</label><br>
-        <input type="text" id="email" name="email"><br>
-        <label for="message">message:</label><br>
-        <input type="text" id="message" name="message"><br>
-        <button href = "mailto:tgc6991@gmail.com">Envoy</button>
-</form>
-
-    </div>
-
-
-
-    </div>
-
+  </div>
 </div>
 
 
-
-
 </body>
+
+
