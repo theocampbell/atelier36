@@ -24,7 +24,7 @@
         document.getElementById('contactez-nous').addEventListener('submit', function(event) {
             event.preventDefault();
             // these IDs from the previous steps
-            emailjs.sendForm('contact_service', 'contact_form', '#contactez-nous', this)
+            emailjs.sendForm('contact_service', 'contact_form', '#contactez-nous')
                 .then(function() {
                     console.log('SUCCESS!');
                 }, function(error) {
