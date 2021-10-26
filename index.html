@@ -12,19 +12,19 @@
   <!-- add fonts -->
 
   <!--Email JS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script type="text/javascript">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
   (function() {
     emailjs.init("user_rYc2zaAW5f2eSGiHpWb8v");
     })();
   </script>
 
-  <script type="text/javascript">
+  <script >
     window.onload = function() {
         document.getElementById('contactez-nous').addEventListener('submit', function(event) {
             event.preventDefault();
             // these IDs from the previous steps
-            emailjs.sendForm('contact_service', 'contact_form', 'contactez-nous', this)
+            emailjs.sendForm('contact_service', 'contact_form', '#contactez-nous', this)
                 .then(function() {
                     console.log('SUCCESS!');
                 }, function(error) {
@@ -64,15 +64,15 @@
       <form id = "contactez-nous">
         <h1 class="contactez-nous">Contactez Nous</h1>
         <div class="form-group">
-          <input type="text" class="form-control" id="InputName" placeholder="NOM" name = "nom" required>
+          <input type="text" class="form-control" placeholder="NOM" name = "nom" required>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL" name = "email" required>
+          <input type="email" class="form-control" placeholder="EMAIL" name = "email" required>
         </div>
         <div class="form-group">
-          <textarea class="form-control" id="Textarea" rows="1" required placeholder="MESSAGE" name = "message"></textarea>
+          <textarea class="form-control" rows="1" required placeholder="MESSAGE" name = "message"></textarea>
         </div>
-          <input type="submit" value="Envoyer" class="btn shadow-none"></input>
+          <input type="submit" value="Envoyer" class="btn shadow-none">
       </form>
     </div>
     <div class="adresse-box">
@@ -114,4 +114,4 @@
 
 </body>
 
-
+</html>
