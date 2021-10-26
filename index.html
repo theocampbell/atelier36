@@ -21,12 +21,10 @@
 
   <script type="text/javascript">
     window.onload = function() {
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
+        document.getElementById('contactez-nous').addEventListener('submit', function(event) {
             event.preventDefault();
-            // generate a five digit number for the contact_number variable
-            this.contact_number.value = Math.random() * 100000 | 0;
             // these IDs from the previous steps
-            emailjs.sendForm('contact_service', 'contact_form', this)
+            emailjs.sendForm('contact_service', 'contact_form', 'contactez-nous', this)
                 .then(function() {
                     console.log('SUCCESS!');
                 }, function(error) {
@@ -63,7 +61,7 @@
      <div class="left-bottom col-lg-6 d-flex justify-content-center align-items-center no-gutters">
       <div class = "left-bottom-container">
       <div class="form-box">
-      <form id = "contact-form">
+      <form id = "contactez-nous">
         <h1 class="contactez-nous">Contactez Nous</h1>
         <div class="form-group">
           <input type="text" class="form-control" id="InputName" placeholder="NOM" name = "nom" required>
