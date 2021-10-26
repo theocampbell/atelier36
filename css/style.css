@@ -29,7 +29,7 @@ header {
 /* top */
 .left-top, .right-top {
   display: flex;
-  height: 65vh;
+  height: 45vh;
   width: 100%;
   font-family: Aller, Arial, Helvetica, sans-serif;
 }
@@ -43,25 +43,30 @@ header {
   transform: translate(-50%, -50%);
 }
 
+.heading-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+
+}
+
 .heading {
   display: flex;
-  padding-top: 20px;
   flex-direction: column;
-  justify-content: center;
-  align-items: left;
   color: #d15117;
-  width: 70%;
+  margin-bottom: 40px;
 }
 
 h2 {
-  font-size: 35px;
-  letter-spacing: 0.1em;
+  font-size: 25px;
+  letter-spacing: 0.05em;
   line-height: 1.1;
 }
 
 h3 {
-  font-size: 25px;
-  letter-spacing: 0.1em;
+  font-size: 20px;
+  letter-spacing: 0.05em;
   margin-left: 0;
 }
 
@@ -76,7 +81,7 @@ img {
 .left-bottom, .right-bottom {
   display: flex;
   flex-direction: column;
-  height: 75vh;
+  height: 95vh;
   background-color: #d15117;
   width: 100%;
   font-family: Aller, Arial, Helvetica, sans-serif;
@@ -221,7 +226,11 @@ form {
   font-size: 12px;
 }
 
-span {
+.info-small{
+  font-size: 11px;
+}
+
+.info-heading {
   text-transform: uppercase;
   font-size: 15px;
 }
